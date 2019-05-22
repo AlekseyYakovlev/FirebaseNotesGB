@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="note"
+                type="ru.spb.yakovlev.firebasenotesgb.common.Note"/>
+        <variable
+                name="model"
+                type="ru.spb.yakovlev.firebasenotesgb.ui.NotesViewModel"/>
+    </data>
+    <androidx.cardview.widget.CardView
+            android:id="@+id/cv_note_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:backgroundTint="@{note.color}"
+            tools:backgroundTint="@color/colorLightYellow">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <EditText
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{note.title}"
+                    tools:text="Заголовок очень важной записи"/>
+
+            <EditText
+                    android:id="@+id/tv_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:inputType="textMultiLine"
+                    android:text="@{note.text}"
+                    tools:text="Очень очень очень очень очень очень длинный текст очень важной записи"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
