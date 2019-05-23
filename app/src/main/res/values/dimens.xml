@@ -1,4 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="rv_margin">8dp</dimen>
+    <dimen name="item_note_text_margin">8dp</dimen>
+    <dimen name="iem_note_card_margin">4dp</dimen>
 </resources>

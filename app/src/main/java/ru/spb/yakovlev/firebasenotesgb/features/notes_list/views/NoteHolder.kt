@@ -1,4 +1,4 @@
-package ru.spb.yakovlev.firebasenotesgb.ui.views
+package ru.spb.yakovlev.firebasenotesgb.features.notes_list.views
 
 import android.text.TextWatcher
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +16,7 @@ class NoteHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding
     }
 
     private fun setListeners() {
-        binding.tvTitle.addTextChangedListener(
+        binding.etTitle.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -25,7 +25,7 @@ class NoteHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding
                 }
             }
         )
-        binding.tvText.addTextChangedListener(
+        binding.etText.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}

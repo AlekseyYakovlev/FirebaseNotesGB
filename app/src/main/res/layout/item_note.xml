@@ -7,13 +7,13 @@
                 type="ru.spb.yakovlev.firebasenotesgb.common.Note"/>
         <variable
                 name="model"
-                type="ru.spb.yakovlev.firebasenotesgb.ui.NotesViewModel"/>
+                type="ru.spb.yakovlev.firebasenotesgb.features.notes_list.NotesViewModel"/>
     </data>
     <androidx.cardview.widget.CardView
             android:id="@+id/cv_note_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
+            android:layout_margin="@dimen/iem_note_card_margin"
             android:backgroundTint="@{note.color}"
             tools:backgroundTint="@color/colorLightYellow">
 
@@ -23,23 +23,28 @@
                 android:orientation="vertical">
 
             <EditText
-                    android:id="@+id/tv_title"
+                    android:id="@+id/et_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="@dimen/item_note_text_margin"
+                    android:layout_marginStart="@dimen/item_note_text_margin"
+                    android:layout_marginEnd="@dimen/item_note_text_margin"
+                    android:inputType="textAutoCorrect"
+                    android:hint="@string/item_note_et_title"
                     android:text="@{note.title}"
-                    tools:text="Заголовок очень важной записи"/>
+                    tools:text="Просто заголовок"
+                    android:importantForAutofill="no"/>
 
             <EditText
-                    android:id="@+id/tv_text"
+                    android:id="@+id/et_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/item_note_text_margin"
                     android:inputType="textMultiLine"
+                    android:hint="@string/item_note_et_text"
                     android:text="@{note.text}"
-                    tools:text="Очень очень очень очень очень очень длинный текст очень важной записи"/>
+                    tools:text="Очень очень очень очень очень очень длинный текст очень важной записи"
+                    android:importantForAutofill="no"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

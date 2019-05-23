@@ -1,12 +1,11 @@
 package ru.spb.yakovlev.firebasenotesgb
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import ru.spb.yakovlev.firebasenotesgb.utils.toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +26,10 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+                this@MainActivity.toast(getString(R.string.main_activity_settings_clicked))
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

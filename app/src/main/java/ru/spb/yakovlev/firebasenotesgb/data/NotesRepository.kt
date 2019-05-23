@@ -11,7 +11,7 @@ object NotesRepository {
     val notes: LiveData<List<Note>> = _notes
 
     init {
-        listOfNotes.add(Note(2L, "test title", "testText"))
+        listOfNotes.add(Note(1L))
         reload()
     }
 
@@ -20,7 +20,6 @@ object NotesRepository {
         listOfNotes.add(Note(newId))
         reload()
     }
-
 
     fun reload() {
         _notes.postValue(listOfNotes)

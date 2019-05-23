@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">FirebaseNotesGB</string>
     <string name="action_settings">Settings</string>
+    <string name="main_activity_settings_clicked">Settings clicked</string>
+    <string name="item_note_et_title">Title</string>
+    <string name="item_note_et_text">Note\'s text</string>
 </resources>

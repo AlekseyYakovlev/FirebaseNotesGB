@@ -1,4 +1,4 @@
-package ru.spb.yakovlev.firebasenotesgb.ui.views
+package ru.spb.yakovlev.firebasenotesgb.features.notes_list.views
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -25,7 +25,8 @@ class CustomAdapter : RecyclerView.Adapter<NoteHolder>() {
     override fun getItemCount() = itemsList.size
 
     fun updateData(newItems: List<Note>) {
-        val diffCallback = ItemsDiffCallback(itemsList, newItems)
+        val diffCallback =
+            ItemsDiffCallback(itemsList, newItems)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         itemsList.clear()
         itemsList.addAll(newItems)

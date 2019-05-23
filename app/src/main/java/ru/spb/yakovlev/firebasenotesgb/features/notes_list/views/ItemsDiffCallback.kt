@@ -1,4 +1,4 @@
-package ru.spb.yakovlev.firebasenotesgb.ui.views
+package ru.spb.yakovlev.firebasenotesgb.features.notes_list.views
 
 import androidx.recyclerview.widget.DiffUtil
 

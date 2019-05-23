@@ -1,4 +1,4 @@
-package ru.spb.yakovlev.firebasenotesgb.ui
+package ru.spb.yakovlev.firebasenotesgb.features.notes_list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,12 +11,11 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import ru.spb.yakovlev.firebasenotesgb.R
 import ru.spb.yakovlev.firebasenotesgb.databinding.NotesFragmentBinding
-import ru.spb.yakovlev.firebasenotesgb.ui.views.CustomAdapter
-import ru.spb.yakovlev.firebasenotesgb.ui.views.NoteHolder
+import ru.spb.yakovlev.firebasenotesgb.features.notes_list.views.CustomAdapter
+import ru.spb.yakovlev.firebasenotesgb.features.notes_list.views.NoteHolder
 import ru.spb.yakovlev.firebasenotesgb.utils.toast
 
 class NotesFragment : Fragment() {
-
     private val defaultColumnCount = 2
 
     private lateinit var viewModel: NotesViewModel
@@ -29,6 +28,8 @@ class NotesFragment : Fragment() {
     ): View? {
         binding = NotesFragmentBinding.inflate(inflater, container, false)
         viewModel = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+        configureRecyclerView()
+        setupFab()
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
@@ -36,8 +37,6 @@ class NotesFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         this.context?.toast("starting...")
-        configureRecyclerView()
-        //setupFab()
     }
 
     private fun configureRecyclerView() {
@@ -98,9 +97,10 @@ class NotesFragment : Fragment() {
             }
         }
 
-//    private fun setupFab(){
-//        this.context?.toast("onFabClicked")
-//        binding.fab.setOnClickListener { viewModel.onFabClicked() }
-
-//    }
+    private fun setupFab(){
+        binding.fab.setOnClickListener {
+            it.context.toast("onFabClicked")
+            viewModel.onFabClicked()
+            }
+    }
 }
