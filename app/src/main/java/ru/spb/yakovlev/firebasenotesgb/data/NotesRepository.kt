@@ -6,38 +6,38 @@ import ru.spb.yakovlev.firebasenotesgb.common.Note
 
 
 object NotesRepository {
-    private val listOfNotes = mutableListOf<Note>()
     private val _notes = MutableLiveData<List<Note>>()
     val notes: LiveData<List<Note>> = _notes
-
-    init {
-        listOfNotes.add(Note(1L))
-        reload()
+    private val listOfNotes by lazy {
+        mutableListOf<Note>().also {
+            it.add(Note(1L))
+            updateLiveData()
+        }
     }
 
     fun addBlankNote() {
         val newId = getMaxId() + 1
         listOfNotes.add(Note(newId))
-        reload()
+        updateLiveData()
     }
 
-    fun reload() {
+    fun updateLiveData() {
         _notes.postValue(listOfNotes)
     }
 
     fun updateNote(
-        note: Note,
+        noteId: Long,
         newTitle: String? = null,
         newText: String? = null,
         newColor: Int? = null
     ) {
-        val i = listOfNotes.indexOfFirst { it == note }
+        val i = listOfNotes.indexOfFirst { it.id == noteId }
         with(listOfNotes[i]) {
             newTitle?.let { title = it }
             newText?.let { text = it }
             newColor?.let { color = it }
         }
-        reload()
+        updateLiveData()
     }
 
     fun swap(item1: Note, item2: Note) {
@@ -46,13 +46,14 @@ object NotesRepository {
         if (index1 == -1 || index2 == -1) return
         listOfNotes[index2] = item1
         listOfNotes[index1] = item2
-        reload()
+        updateLiveData()
     }
 
     fun delete(item: Note) {
         listOfNotes.remove(item)
-        reload()
+        updateLiveData()
     }
 
     private fun getMaxId() = listOfNotes.map { it.id }.max() ?: 0
+
 }
