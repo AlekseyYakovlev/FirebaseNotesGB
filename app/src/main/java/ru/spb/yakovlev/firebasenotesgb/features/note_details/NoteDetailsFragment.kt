@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ru.spb.yakovlev.firebasenotesgb.R
 
-import ru.spb.yakovlev.fiewbasenotesgb.R
 
 class NoteDetailsFragment : Fragment() {
 

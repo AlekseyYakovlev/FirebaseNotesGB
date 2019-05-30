@@ -1,17 +1,20 @@
 package ru.spb.yakovlev.firebasenotesgb.features.notes_list.views
 
+import android.text.Editable
 import android.text.TextWatcher
 import androidx.recyclerview.widget.RecyclerView
 import ru.spb.yakovlev.firebasenotesgb.common.Note
 import ru.spb.yakovlev.firebasenotesgb.databinding.ItemNoteBinding
-import android.text.Editable
+import ru.spb.yakovlev.firebasenotesgb.features.notes_list.NotesViewModel
 
 
 class NoteHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(noteItem: Note) {
+    fun bind(noteItem: Note, viewModel: NotesViewModel) {
         binding.note = noteItem
+        binding.model=viewModel
         setListeners()
+
         binding.executePendingBindings()
     }
 

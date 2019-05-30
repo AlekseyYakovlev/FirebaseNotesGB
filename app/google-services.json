@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "632377917946",
+    "firebase_url": "https://fir-first-a7960.firebaseio.com",
+    "project_id": "fir-first-a7960",
+    "storage_bucket": "fir-first-a7960.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632377917946:android:695cba9e9cc4de24",
+        "android_client_info": {
+          "package_name": "ru.spb.yakovlev.firebasenotesgb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632377917946-5p4r4l5qbm9nlhcfd9evoc0sbqvepqm1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.spb.yakovlev.firebasenotesgb",
+            "certificate_hash": "c4dbad6d0ff323810b12949c82778814aee79e7c"
+          }
+        },
+        {
+          "client_id": "632377917946-cpj45jcis659ngbt2ko236p1h89nvo9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCahfWUNbT-VxoFHC3xIQinmLb9aqtR_MA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632377917946-cpj45jcis659ngbt2ko236p1h89nvo9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

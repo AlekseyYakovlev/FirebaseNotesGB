@@ -7,6 +7,7 @@ import ru.spb.yakovlev.firebasenotesgb.data.NotesRepository
 
 
 class NotesViewModel : ViewModel() {
+
     private val noteRepo = NotesRepository
     val notes: LiveData<List<Note>> = noteRepo.notes
 
@@ -15,7 +16,7 @@ class NotesViewModel : ViewModel() {
     }
 
     fun onNoteTextChanged(note: Note?, text: String) {
-        note?.let {noteRepo.updateNote(note, newText = text)}
+        note?.let {noteRepo.updateNote(it, newText = text)}
     }
 
     fun onItemsSwap(item1: Note?, item2: Note?) {

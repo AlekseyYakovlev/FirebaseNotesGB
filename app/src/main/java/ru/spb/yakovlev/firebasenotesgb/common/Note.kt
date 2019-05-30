@@ -6,6 +6,7 @@ import java.util.*
 
 @Parcelize
 data class Note(
+    var fbTag: String = "",
     var id: Long = 0L,
     var title: String = "",
     var text: String = "",

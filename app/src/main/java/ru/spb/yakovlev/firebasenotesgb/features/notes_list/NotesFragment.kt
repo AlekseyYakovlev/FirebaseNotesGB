@@ -41,7 +41,7 @@ class NotesFragment : Fragment() {
 
     private fun configureRecyclerView() {
         val columnCount = (activity?.resources?.getInteger(R.integer.column_count)) ?: defaultColumnCount
-        val notesAdapter = CustomAdapter()
+        val notesAdapter = CustomAdapter(viewModel)
         viewModel.notes.observe(
             this@NotesFragment,
             Observer { list -> notesAdapter.updateData(list) }
@@ -55,7 +55,7 @@ class NotesFragment : Fragment() {
                 else -> androidx.recyclerview.widget.GridLayoutManager(context, columnCount)
             }
             //TODO: Add custom animation
-            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+            //itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
 
             itemTouchHelper.attachToRecyclerView(this@with)
             adapter = notesAdapter

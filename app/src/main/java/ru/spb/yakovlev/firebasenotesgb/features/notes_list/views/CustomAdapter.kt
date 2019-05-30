@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import ru.spb.yakovlev.firebasenotesgb.common.Note
 import ru.spb.yakovlev.firebasenotesgb.databinding.ItemNoteBinding
+import ru.spb.yakovlev.firebasenotesgb.features.notes_list.NotesViewModel
 
-class CustomAdapter : RecyclerView.Adapter<NoteHolder>() {
+class CustomAdapter(private val viewModel: NotesViewModel) : RecyclerView.Adapter<NoteHolder>() {
 
     private val itemsList = mutableListOf<Note>()
 
@@ -19,7 +20,7 @@ class CustomAdapter : RecyclerView.Adapter<NoteHolder>() {
 
     override fun onBindViewHolder(holder: NoteHolder, position: Int) {
         val item = itemsList[position]
-        holder.bind(item)
+        holder.bind(item, viewModel)
     }
 
     override fun getItemCount() = itemsList.size
